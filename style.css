@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    height: 8rem;
+    background-color: aquamarine;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px 0px 100px;
+}
+
+nav .logo {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: rgb(232, 36, 212);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    padding: 8px 10px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover, 
+nav ul li a.active {
+    background: #fff;
+    text-decoration: underline;
+}
+
+nav .menu-btn i{
+    color:#fff;
+    font-size: 30px;
+    cursor:pointer;
+    display: none;
+}
+
+#click{
+    display: none;
+}
+
+.sign{
+    padding: 10px;
+    border-radius: 10px;
+    color: purple;
+    background-color: white;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.sign:hover{
+    font-weight: bold;
+    background-color: purple;
+    color: white;
+    border: none;
+}
+
+@media (max-width:940px){
+    nav .menu-btn i{
+        display: block;
+    }
+    #click:checked ~ .menu-btn i:before{
+        content: "\f00d";
+    }
+    nav ul{
+        position: fixed;
+        top: 8rem;
+        left: -100%;
+        background-color: #111;
+        height: 100vh;
+        width: 100%;
+        display: block;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    #click:checked ~ ul{
+        left: 0%;
+        
+    }
+    #click:checked ~ .sign{
+        left: 44%;
+    }
+    nav ul li{
+        margin: 40px 0;
+    }
+    nav ul li a{
+        font-size: 1rem;
+        display: block;
+    }
+    nav ul li a:hover{
+        text-decoration: none;
+    }
+    .sign{
+          position: fixed;
+          bottom: 0;
+          left: -100%;
+          margin-bottom: 10px;
+          transition: all 0.3s ease;
+    }
+}
